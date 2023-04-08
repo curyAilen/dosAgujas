@@ -5,7 +5,6 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 const App = () => {
   return (
     <>
-   
       <NavBar />
       <ItemListContainer greeting={'Dos Agujas'} />
       <Footer />
