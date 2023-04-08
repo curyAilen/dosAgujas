@@ -1,4 +1,6 @@
-import CartWidget from "./CartWidget"
+import './navBar.css';
+import CartWidget from "../CartWidget/CartWidget"
+
 const Header = () => {  
   return (
     <header className="header">
@@ -24,23 +26,23 @@ const Header = () => {
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link link" href="#">
+                <a className="nav-link link" href="localhost:3000">
                   Mantas
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link link" href="#">
+                <a className="nav-link link" href="localhost:3000">
                   Gorros
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link link" href="#">
+                <a className="nav-link link" href="localhost:3000">
                   Bufandas 
                 </a>
               </li>
               <li className="nav-item">
                 
-                <a className="nav-link link" href="#">
+                <a className="nav-link link" href="localhost:3000">
                   Mitones
                 </a>
               </li>
@@ -50,7 +52,7 @@ const Header = () => {
           </div>
           <CartWidget />
          
-            <a className=" align-items-center text-reset me-3" href="#">
+            <a className=" align-items-center text-reset me-3" href="localhost:3000">
             <img src="/images/user.png" height="30" alt="Dos Agujas Logo" loading="lazy" ></img>
             </a>
            
