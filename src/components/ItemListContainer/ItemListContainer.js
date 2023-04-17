@@ -1,3 +1,4 @@
+import './itemListContainer.css';
 
 const ItemListContainer = (props) => {
   return (

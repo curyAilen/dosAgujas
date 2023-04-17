@@ -1,4 +1,4 @@
-
+import './cartWidget.css'; 
 const CartWidget = () => {
   return (
     <section>

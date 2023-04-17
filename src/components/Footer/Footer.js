@@ -1,6 +1,8 @@
+import './footer.css';
+
 const Footer = () => {
   return (
-    <footer className="text-center text-lg-start bg-light text-muted">
+    <footer className="text-center text-lg-start text-muted footer">
       <div className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <ul className=" col-12 d-flex">
           <li className="list-unstyled me-4 text-reset">

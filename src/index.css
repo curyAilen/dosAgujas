@@ -10,3 +10,9 @@ html , body , #root {
 .link{
   text-decoration: none;
 }
+.boton{
+text-align: center;
+border-radius: 10px;
+box-shadow: -1px -1px 28px -3px rgba(0,0,0,0.39);
+margin: 5px;
+}
