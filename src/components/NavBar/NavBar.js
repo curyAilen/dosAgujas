@@ -1,5 +1,6 @@
 import './navBar.css';
 import CartWidget from "../CartWidget/CartWidget"
+import { Link } from "react-router-dom";
 
 const Header = () => {  
   return (
@@ -20,41 +21,20 @@ const Header = () => {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            
-              <img src="/images/dosagujas.png" height="55" alt="Dos Agujas Logo" loading="lazy" ></img>
-            
-
+            <Link to="/">
+            <img src="/images/dosagujas.png" height="55" alt="Dos Agujas Logo" loading="lazy" ></img>
+            </Link>    
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link link" href="localhost:3000">
-                  Mantas
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link link" href="localhost:3000">
-                  Gorros
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link link" href="localhost:3000">
-                  Bufandas 
-                </a>
-              </li>
-              <li className="nav-item">
-                
-                <a className="nav-link link" href="localhost:3000">
-                  Mitones
-                </a>
-              </li>
-              
+              <Link to="Mantas" className="nav-link link" >Mantas</Link>
+              <Link to="Gorros" className="nav-link link" >Gorros</Link>
+              <Link to="Bufandas" className="nav-link link" >Bufandas</Link>                           
+              <Link to="Mitones" className="nav-link link" >Mitones</Link>
             </ul>
-
           </div>
-          <CartWidget />
-         
-            <a className=" align-items-center text-reset me-3" href="localhost:3000">
+          <CartWidget />         
+            <Link to="/cuenta" className=" align-items-center text-reset me-3" >
             <img src="/images/user.png" height="30" alt="Dos Agujas Logo" loading="lazy" ></img>
-            </a>
+            </Link>
            
     </div>
    
