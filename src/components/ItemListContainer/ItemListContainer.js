@@ -1,17 +1,31 @@
+import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import './itemListContainer.css';
+import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = (props) => {
+
+
+const ItemListContainer = () => {
+  const [estado, setEstado] = useState([]);
+
+  const parametros = useParams();
+
+  useEffect(() => {
+    const obtenerProductos = async () => {
+      try {
+        const respuesta = await fetch('../../productos.json');
+        const productos = await respuesta.json();
+        setEstado(productos);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    obtenerProductos();
+  }, [parametros.id])
+
   return (
-    <section className="container">
-    <div className="row">
-   <h2 className="col-6 mx-auto text-center" >{props.greeting}</h2>
-    </div>
-    </section>
-
-
-
-  )
-
-
+    <ItemList productos={estado} />
+  );
 }
+
 export default ItemListContainer;

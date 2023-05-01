@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "nombre": "Gorro",
+        "stock": 4,
+        "precio": 569,
+        "categoria": "Gorro",
+        "img": "/images/products/gorro1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Manta",
+        "stock": 6,
+        "precio": 10094,
+        "categoria": "Manta",
+        "img": "/images/products/manta.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Bufanda",
+        "stock": 8,
+        "precio": 2018,
+        "categoria": "Bufanda",
+        "img": "/images/products/bufanda.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Gorro",
+        "stock": 12,
+        "precio": 15090,
+        "categoria": "Gorro",
+        "img": "/images/products/gorro.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Bufanda",
+        "stock": 1,
+        "precio": 2050,
+        "categoria": "Bufanda",
+        "img": "/images/products/bufanda.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Mitones",
+        "stock": 5,
+        "precio": 3923,
+        "categoria": "Mitones",
+        "img": "/images/products/mitones.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Mitones",
+        "stock": 15,
+        "precio": 4798,
+        "categoria": "Mitones",
+        "img": "/images/products/mitones.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Manta",
+        "stock": 13,
+        "precio": 11487,
+        "categoria": "Manta",
+        "img": "/images/products/manta2.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Manta",
+        "stock": 3,
+        "precio": 5603,
+        "categoria": "Manta",
+        "img": "/images/products/manta2.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Manta",
+        "stock": 10,
+        "precio": 9204,
+        "categoria": "Manta",
+        "img": "/images/products/manta.jpg"
+    }
+]
