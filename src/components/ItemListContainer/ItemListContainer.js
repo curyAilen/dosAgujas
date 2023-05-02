@@ -10,7 +10,7 @@ const productos = [
     stock: 4,
     precio: 569,
     categoria: "Gorro",
-    img: "./public/images/products/gorro1.jpg",
+    img: "images/products/gorro1.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,6 @@ const productos = [
     img: "./public/images/products/manta.jpg",
   },
 ];
-
 const ItemListContainer = () => {
   const [estado, setEstado] = useState([]);
 
@@ -30,9 +29,10 @@ const ItemListContainer = () => {
       setTimeout(() => {
         res(productos);
       }, 3000);
-      getEstado.then((res) => setEstado(res));
-    }, []);
-  });
+    });
+    getEstado.then((res) => setEstado(res));
+  }, []);
+
 
   return <ItemList productos={estado} />;
 };
