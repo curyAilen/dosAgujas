@@ -1,19 +1,24 @@
 import { useState } from "react";
-//import Item from "../Item/Item";
+import { Link } from "react-router-dom";
 
 const ItemList = ({ productos }) => {
-  const [producto, setProducto] = useState(productos);
-
   return (
-    <div>     
-      {producto.map((item) => (
-        <div key={item.id}>
-          <h5>{item.nombre}</h5>
-          <p>{item.descripcion}</p>
-        </div>
-      ))}
-    </div>
-  );
+<Link to={`/`}>
+
+<div className="container" >
+  <div key={productos.id}>
+      <div>
+        <img src="{productos.img}"/>
+      </div>
+      <div>
+        <h5>{productos.nombre}</h5>
+        <p>{productos.precio}</p>
+      </div>
+  </div>  
+</div>
+</Link>
+
+)
 };
 
 export default ItemList;

@@ -8,7 +8,7 @@ const Main =()=>{
 
     return(
 <Routes>
-<Route path="/" element ={<p>Home</p>}></Route>
+<Route path="/" element ={<home/>}></Route>
 <Route path="/mantas" element ={<p>Mantas</p>}></Route>
 <Route path="/gorros" element ={<p>Gorros</p>}></Route>
 <Route path="/bufandas" element ={<Bufandas/>}></Route>

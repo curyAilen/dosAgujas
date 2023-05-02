@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 
-const Item = (props) => {
-  const { id, nombre } = props.producto;
+const Item = (estado) => {
+  
   return (
-    <div>
-      <h1>{nombre}</h1>
-      <Link to={`/item/${id}`}>Detalle</Link>
-    </div>
+    
+      console.log(estado)
   );
 };
 
