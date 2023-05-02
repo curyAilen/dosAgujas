@@ -20,15 +20,9 @@ const productos = [
     precio: 10094,
     categoria: "Manta",
     img: "/images/products/manta1.jpg",
-  }
+  },
 ];
-
-
-
 const ItemListContainer = () => {
-
-
-  
   const [estado, setEstado] = useState([]);
 
   useEffect(() => {
