@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Item = (productos) => {
+const ItemDetail = (productos) => {
   
   return (
     
@@ -13,6 +13,9 @@ const Item = (productos) => {
           <div className="card-body">
             <h5>{productos.nombre}</h5>
             <p>{productos.precio}</p>
+            <p>{productos.categotia}</p>
+            <p>{productos.stock}</p>
+
             <Link to={"/detalle" + productos.id}>Ver más</Link>
           </div>
       </div>  
@@ -21,4 +24,4 @@ const Item = (productos) => {
   );
 };
 
-export default Item;
+export default ItemDetail;

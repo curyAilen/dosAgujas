@@ -10,7 +10,7 @@ const productos = [
     stock: 4,
     precio: 569,
     categoria: "Gorro",
-    img: "images/products/gorro1.jpg",
+    img: "/images/products/gorro1.jpg",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const productos = [
     stock: 6,
     precio: 10094,
     categoria: "Manta",
-    img: "./public/images/products/manta.jpg",
+    img: "/images/products/manta.jpg",
   },
 ];
 const ItemListContainer = () => {
@@ -28,7 +28,7 @@ const ItemListContainer = () => {
     const getEstado = new Promise((res) => {
       setTimeout(() => {
         res(productos);
-      }, 3000);
+      }, 1000);
     });
     getEstado.then((res) => setEstado(res));
   }, []);
