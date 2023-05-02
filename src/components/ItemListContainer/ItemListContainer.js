@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./itemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 
+
 const productos = [
   {
     id: 1,
@@ -18,10 +19,16 @@ const productos = [
     stock: 6,
     precio: 10094,
     categoria: "Manta",
-    img: "/images/products/manta.jpg",
-  },
+    img: "/images/products/manta1.jpg",
+  }
 ];
+
+
+
 const ItemListContainer = () => {
+
+
+  
   const [estado, setEstado] = useState([]);
 
   useEffect(() => {
