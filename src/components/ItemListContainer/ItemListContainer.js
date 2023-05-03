@@ -26,11 +26,8 @@ const ItemListContainer = () => {
   const [estado, setEstado] = useState([]);
 
   useEffect(() => {
-    const getEstado = new Promise((res) => {
-      setTimeout(() => {
-        res(productos);
-      }, 1000);
-    });
+    const getEstado = fetch("productos.json")
+    .then((res)=> res.json())
     getEstado.then((res) => setEstado(res));
   }, []);
 

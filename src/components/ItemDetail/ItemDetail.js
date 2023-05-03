@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ItemDetail = (productos) => {
+const ItemDetail = ({productos}) => {
 
 
   return (
