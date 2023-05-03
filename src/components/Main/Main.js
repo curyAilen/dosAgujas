@@ -5,6 +5,7 @@ import Mitones from "../page/Mitones";
 import Gorros from "../page/Gorros";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import {Route, Routes}  from "react-router-dom";
 
 

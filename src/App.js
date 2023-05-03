@@ -13,7 +13,7 @@ const App = () => {
       <NavBar />
       <ItemListContainer greeting={'Dos Agujas'} />
       <Main></Main>
-      <ItemCount inicial={1} stock={25} agregar={(cantidad)=> console.log("Agregado al carrito:", cantidad)}></ItemCount>
+ 
       <Footer />
       </BrowserRouter>
    

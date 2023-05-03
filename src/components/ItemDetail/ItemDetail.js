@@ -1,26 +1,34 @@
+import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetail = ({productos}) => {
-
-
+const ItemDetail = ({ productos }) => {
   return (
-    
-   
-    <div className="card col-4" >
-      <div key={productos.id} className="">
-          <div className="card-img">
-            <img src={productos.img} className="img-fluid"/>
-          </div>
-          <div className="card-body">
-            <h5>{productos.nombre}</h5>
-            <p>{productos.precio}</p>
-            <p>{productos.categotia}</p>
-            <p>{productos.stock}</p>
+    <Card className="container">
+      <div className="row">
+        <div key={productos.id} className="col-md-4">
+          <Card.Img src={productos.img} />
+        </div>
+        <div className="col-md-8">
+          <Card.Body>
+            <Card.Title>{productos.nombre}</Card.Title>
+            <div>
+              <p>${productos.precio}</p>
+              <p>Categoria: {productos.categoria}</p>
+              <p>Stock disponible: {productos.stock}</p>
 
-          </div>
-      </div>  
-    </div>
-   
+              <ItemCount
+                inicial={1}
+                stock={100}
+                agregar={(cantidad) =>
+                  console.log("Agregado al carrito:", cantidad)
+                }
+              ></ItemCount>
+            </div>
+          </Card.Body>
+        </div>
+      </div>
+    </Card>
   );
 };
 

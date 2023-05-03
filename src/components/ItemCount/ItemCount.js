@@ -14,15 +14,15 @@ const ItemCount = ({inicial, stock, agregar})=>{
     }}
     return(
         <>
-        <div className='container'>
-        <div className='row itemCount justify-content-center'>
-            <button onClick={incrementa} className='btn col-3 boton'>+</button>
-            <h4 className='numero col-1'>{cantidad}</h4>
-        <button onClick={decrementa} className='btn col-3 boton'>-</button>
-        
-            <button className='agregarCarrito btn boton' onClick={()=> agregar(cantidad)} disabled={!stock}>Agregar</button>
-        </div>
-        </div>
+      
+      <div className='d-flex itemCount justify-content-center align-items-center'>
+      <button onClick={incrementa} className='btn boton mx-2' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}} >+</button>
+
+    <h4 className='numero mx-2'>{cantidad}</h4>
+    <button onClick={decrementa} className='btn boton mx-2' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>-</button>
+    <button className='agregarCarrito btn boton mx-auto' onClick={()=> agregar(cantidad)} disabled={!stock}>Agregar</button>
+</div>
+
         </>
     )
 
