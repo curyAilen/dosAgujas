@@ -15,7 +15,7 @@ const ItemListContainer = ({greeting}) => {
       return new Promise((res) => {
         setTimeout(() => {
           res(mock);
-        }, 2000);
+        }, 1000);
       });
     }
 

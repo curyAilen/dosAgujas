@@ -4,7 +4,7 @@
         "nombre": "Gorro",
         "stock": 4,
         "precio": 569,
-        "categoria": "Gorro",
+        "categoria": "Gorros",
         "img": "/images/products/gorro1.jpg"
     },
     {
@@ -12,7 +12,7 @@
         "nombre": "Manta",
         "stock": 6,
         "precio": 10094,
-        "categoria": "Manta",
+        "categoria": "Mantas",
         "img": "/images/products/manta1.jpg"
     },
     {
@@ -20,7 +20,7 @@
         "nombre": "Bufanda",
         "stock": 8,
         "precio": 2018,
-        "categoria": "Bufanda",
+        "categoria": "Bufandas",
         "img": "/images/products/bufanda.jpg"
     },
     {
@@ -28,7 +28,7 @@
         "nombre": "Gorro",
         "stock": 12,
         "precio": 15090,
-        "categoria": "Gorro",
+        "categoria": "Gorros",
         "img": "/images/products/gorro1.jpg"
     },
     {
@@ -36,7 +36,7 @@
         "nombre": "Bufanda",
         "stock": 1,
         "precio": 2050,
-        "categoria": "Bufanda",
+        "categoria": "Bufandas",
         "img": "/images/products/bufanda.jpg"
     },
     {
@@ -60,7 +60,7 @@
         "nombre": "Manta",
         "stock": 13,
         "precio": 11487,
-        "categoria": "Manta",
+        "categoria": "Mantas",
         "img": "/images/products/manta2.jpg"
     },
     {
@@ -68,7 +68,7 @@
         "nombre": "Manta",
         "stock": 3,
         "precio": 5603,
-        "categoria": "Manta",
+        "categoria": "Mantas",
         "img": "/images/products/manta2.jpg"
     },
     {
@@ -76,7 +76,7 @@
         "nombre": "Manta",
         "stock": 10,
         "precio": 9204,
-        "categoria": "Manta",
+        "categoria": "Mantas",
         "img": "/images/products/manta2.jpg"
     }
 ]

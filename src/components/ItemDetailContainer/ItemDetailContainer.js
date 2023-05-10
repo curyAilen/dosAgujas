@@ -12,13 +12,13 @@ const ItemDetailContainer = () => {
         return new Promise((res) => {
           setTimeout(() => {
             res(mock);
-          }, 2000);
+          }, 1000);
         });
       }
   
       getProducts(id)
         .then((product) => {
-          setProduct(product.find((x) => x.id === id));
+          setProduct(product.find((x) => x.id ===  parseInt(id)));
         })
     }, [id]);
   
