@@ -33,6 +33,7 @@ const Header = () => {
           </div>
           <CartWidget />         
             <Link to="/cuenta" className=" align-items-center text-reset me-3" >
+              
             <img src="/images/user.png" height="30" alt="Dos Agujas Logo" loading="lazy" ></img>
             </Link>
            
