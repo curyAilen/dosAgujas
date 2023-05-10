@@ -15,7 +15,7 @@ const Main =()=>{
     return(
 <Routes>
 <Route path="/" element={<ItemListContainer/>}></Route>
-<Route path="/category/mantas"  element ={<Mantas/>}></Route>
+<Route path="/category/:id"  element ={<Mantas/>}></Route>
 <Route path="/category/gorros"  element ={<Gorros/>}></Route>
 <Route path="/category/bufandas" element ={<Bufandas/>}></Route>
 <Route path="/category/mitones"  element ={<Mitones/>}></Route>

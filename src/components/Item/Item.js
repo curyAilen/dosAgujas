@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Item = (productos) => {
   return (
-    <div key={productos.id} className="card col-4">
+    <div key={productos.id} className="card col-2 m-2">
       <div className="card-header">
         <h5 className="card-title">{productos.nombre}</h5>
       </div>
