@@ -1,19 +1,26 @@
+import { Button, Card, Image, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Item = ({id, nombre, img}) => {
+const Item = ({id, nombre, img, precio}) => {
   return (
-    <div key={id} className="card col-lg-3 m-2 col-md-10">
-      <div className="card-header">
-        <h5 className="card-title">{nombre}</h5>
-      </div>
-      <img src={img} className="img-fluid card-img-top" />
-      <div className="card-body">
-        <Link to={'/detalle/${id}'} as={Link} className="btn btn-primary">
-      
-          Ver más
-        </Link>
-      </div>
-    </div> 
+    <Card key={id} className="shadow-sm">
+      <ListGroup className="list-group-flush">
+      <ListGroup.Item className="text-center">
+      <Image src={img} style={{ height: "175px" }} />
+        </ListGroup.Item>
+      </ListGroup>
+      <Card.Body>
+        <Card.Title className="fs-6" >
+          {nombre}
+        </Card.Title>
+        <div className="d-flex align-items-center justify-content-between">
+          <strong>${precio}</strong>
+          <Button as={Link} to={`/detalle/${id}`}>
+            Ver más
+          </Button>
+        </div>
+      </Card.Body>
+    </Card>
   );
 };
 

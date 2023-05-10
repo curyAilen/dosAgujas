@@ -1,9 +1,9 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
-import Main from "./components/Main/Main";
-import ItemCount from "./components/ItemCount/ItemCount";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import {BrowserRouter} from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+
 
 
 const App = () => {
@@ -11,9 +11,12 @@ const App = () => {
     
     <BrowserRouter>
       <NavBar />
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/catedoria/:categoriaId" element={<ItemListContainer />} />
+        <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+      </Routes>
       <ItemListContainer greeting={'Dos Agujas'} />
-      <Main></Main>
- 
       <Footer />
       </BrowserRouter>
    

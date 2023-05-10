@@ -22,7 +22,11 @@ const ItemDetailContainer = () => {
         })
     }, [id]);
   
-    return(<ItemDetail {...product} />)
+    return(
+    <div>
+    <ItemDetail {...product} />
+    </div>
+    )
    
 };
 export default ItemDetailContainer;

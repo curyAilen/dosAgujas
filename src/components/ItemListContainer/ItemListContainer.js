@@ -41,14 +41,4 @@ const ItemListContainer = ({greeting}) => {
   );
 };
 
-  /*useEffect(() => {
-    const getEstado = fetch("productos.json")
-    .then((res)=> res.json())
-    getEstado.then((res) => setEstado(res));
-  }, []);
-
-
-  return <ItemList productos={estado} />;
-};*/
-
 export default ItemListContainer;

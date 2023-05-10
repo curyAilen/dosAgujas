@@ -1,33 +1,34 @@
-import { Card } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({id, nombre, stock, precio, categoria, img}) => {
   return (
-    <Card className="container">
-      <div className="row">
-        <div key={id} className="col-md-4">
-          <Card.Img src={img} alt={nombre}/>
-        </div>
-        <div className="col-md-8">
-          <Card.Body>
-            <Card.Title>{nombre}</Card.Title>
-            <div>
-              <p>${precio}</p>
-              <p>Categoria: {categoria}</p>
-              <p>Stock disponible: {stock}</p>
-
-              <ItemCount
+    
+       <Container className="mt-5">
+      <Row>
+        <Col xs={12} lg={6}>
+          <Image src={img} alt={nombre} thumbnail />
+        </Col>
+        <Col xs={12} lg={6}>
+          <h4 className="fs-4" >
+            {nombre}
+          </h4>
+          <h5 className="fs-5" >
+            ${precio} - {stock} unidades disponibles
+          </h5>
+         
+          <div className="d-flex justify-content-center mt-4">
+          <ItemCount
                 inicial={1}
                 stock={100}
                 agregar={(cantidad) =>
                   console.log("Agregado al carrito:", cantidad)
                 }
               ></ItemCount>
-            </div>
-          </Card.Body>
-        </div>
-      </div>
-    </Card>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
