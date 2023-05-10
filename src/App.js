@@ -13,10 +13,10 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="/catedoria/:categoriaId" element={<ItemListContainer />} />
-        <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+        <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
+        <Route path="/detalle/:id" element={<ItemDetailContainer />} />       
       </Routes>
-      <ItemListContainer greeting={'Dos Agujas'} />
+     
       <Footer />
       </BrowserRouter>
    

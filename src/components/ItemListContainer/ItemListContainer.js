@@ -8,7 +8,7 @@ import mock from "../../productos.json"
 
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([]);
-  const { categoriaID } = useParams();
+  const { categoriaId } = useParams();
 
   useEffect(() => {
       function getProducts() {
@@ -19,17 +19,17 @@ const ItemListContainer = ({greeting}) => {
       });
     }
 
-    getProducts(categoriaID) 
+    getProducts(categoriaId) 
       .then((products) => {
-        if (categoriaID) {
+        if (categoriaId) {
           setProducts(
-            products.filter((product) => product.categoria === categoriaID)
+            products.filter((product) => product.categoria === categoriaId)
           );
         } else {
           setProducts(products);
         }
       })
-  }, [categoriaID]);
+  }, [categoriaId]);
 
   return (
     <div>
