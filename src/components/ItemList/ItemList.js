@@ -5,10 +5,10 @@ const ItemList = ({ products }) => {
   return (
     <Container>
       <Row className="container-fluid">
-        
+
           {products.map((e) => (
-          <Col className="mt-5" xs={12} lg={4}>
-          <Item key={e.id} {...e} /> 
+          <Col className="mt-5" xs={12} lg={4} key={e.id} >
+          <Item {...e} /> 
           </Col>
           ))}
         
