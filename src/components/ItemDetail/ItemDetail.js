@@ -1,21 +1,20 @@
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetail = ({ productos }) => {
+const ItemDetail = ({id, nombre, stock, precio, categoria, img}) => {
   return (
     <Card className="container">
       <div className="row">
-        <div key={productos.id} className="col-md-4">
-          <Card.Img src={productos.img} />
+        <div key={id} className="col-md-4">
+          <Card.Img src={img} alt={nombre}/>
         </div>
         <div className="col-md-8">
           <Card.Body>
-            <Card.Title>{productos.nombre}</Card.Title>
+            <Card.Title>{nombre}</Card.Title>
             <div>
-              <p>${productos.precio}</p>
-              <p>Categoria: {productos.categoria}</p>
-              <p>Stock disponible: {productos.stock}</p>
+              <p>${precio}</p>
+              <p>Categoria: {categoria}</p>
+              <p>Stock disponible: {stock}</p>
 
               <ItemCount
                 inicial={1}

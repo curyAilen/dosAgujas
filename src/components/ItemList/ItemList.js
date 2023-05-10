@@ -1,11 +1,15 @@
 import Item from "../Item/Item"
 
-const ItemList = ({ productos }) => {
+const ItemList = ({ products }) => {
   return (
     <div className="container-fluid">
-<div className="row justify-content-around my-5">
-{productos.map(e=> <Item key={e.id}{...e}/>)}
-</div>
+
+{products.map((product)=>{
+  <div key={product.id} className="row justify-content-around my-5">
+    <Item {...product}/>
+  </div>
+})}
+
 </div>
 )
 };

@@ -21,14 +21,14 @@ const Header = () => {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <Link to="/">
+            <Link as={Link} to="/">
             <img src="/images/dosagujas.png" height="55" alt="Dos Agujas Logo" loading="lazy" ></img>
             </Link>    
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <Link to="Mantas" className="nav-link link" >Mantas</Link>
-              <Link to="Gorros" className="nav-link link" >Gorros</Link>
-              <Link to="Bufandas" className="nav-link link" >Bufandas</Link>                           
-              <Link to="Mitones" className="nav-link link" >Mitones</Link>
+              <Link as={Link} to="/categoria/Mantas" className="nav-link link" >Mantas</Link>
+              <Link as={Link} to="/categoria/Gorros" className="nav-link link" >Gorros</Link>
+              <Link as={Link} to="/categoria/Bufandas" className="nav-link link" >Bufandas</Link>                           
+              <Link as={Link} to="/categoria/Mitones" className="nav-link link" >Mitones</Link>
             </ul>
           </div>
           <CartWidget />         

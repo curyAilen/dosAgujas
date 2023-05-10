@@ -1,27 +1,28 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import mock from "../../productos.json"
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({})
-
-    const {id} = useParams(); 
-
-    useEffect(()=>{
-        fetch('../productos.json')
-        .then(response => response.json())
-        .then(producto => {
-            const productoEncontrado = producto.find(prod => prod.id === parseInt(id));
-            setProduct(productoEncontrado);
-        
-        })
-        .catch(error => {
-            console.log('Error al obtener los productos:', error);
-           
+    const [product, setProduct] = useState();
+    const { id } = useParams();
+  
+    useEffect(() => {  
+      function getProducts() {
+        return new Promise((res) => {
+          setTimeout(() => {
+            res(mock);
+          }, 2000);
         });
-      
-    },[id])
-    return(<ItemDetail productos={product}/>)
+      }
+  
+      getProducts(id)
+        .then((product) => {
+          setProduct(product.find((x) => x.id === id));
+        })
+    }, [id]);
+  
+    return(<ItemDetail {...product} />)
    
 };
 export default ItemDetailContainer;
