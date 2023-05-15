@@ -1,40 +1,29 @@
 import { db } from "./firebase";
 import { collection, getDocs, doc } from "firebase/firestore";
 
-  //obtener refecencia de DB ===> 
-        //const db = getFirestore(app)
-    //obtener una referencia auna collecion  ===>   
-        //const coleccion = collection(db, "productos")
-    //hacer una consulta a la coleción ===> 
-        //const consulta = getDocs(coleccion)
-        //ESTO LO IMPORTAMOS EN ItemListContainer.js y reemplaza el fetch hecho y me trae todos los productos
 
-const getProductos = ()=> {
 
-    const coleccion = collection(db, "productos");
-    const consulta = getDocs(coleccion);
-
-    consulta
-    .then((res)=>{
-        const resParse = res.docs.map((doc)=>{
-            const procuto = {
-                id: doc.id,
-                ...doc.data(),
-            }
-            console.log(procuto) //Deberia devolver el objeto con los datos de la base de datos
-        
-        })
-        console.log(res);       
+export const getProductos = () => {
+  const productosCollection = collection(db, "productos");
+  return getDocs(productosCollection)
+    .then((respuesta) => {
+      const array_de_documentos = respuesta.docs;
+      const resultado = array_de_documentos.map((documento) => {
+        const id = documento.id;
+        const data = documento.data();
+        data.id = id;
+        return data;
+      });
+      return resultado;
     })
-    .catch((err)=>{
-    console.log(err)
-    })
-}
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
-const saveSale = ()=>{
+const saveSale = () => {
 
-}
-
-const getProdcutoDetail = ()=>{
     
-}
+};
+
+const getProdcutoDetail = () => {};
