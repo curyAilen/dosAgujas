@@ -3,12 +3,12 @@ import Footer from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
+import Cart from "./components/CartContainer/Cart";
 import CustomProvider from "./components/CustomProvider";
-
 
 const App = () => {
   return (
-    
+
     <BrowserRouter>
     <CustomProvider>
       <NavBar />

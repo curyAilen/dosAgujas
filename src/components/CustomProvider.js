@@ -1,34 +1,34 @@
 import { createContext, useState } from "react"
-
 export const contexto = createContext();
 
 const { Provider } = contexto
 
 
 const CustomProvider = ({children}) => {
+  const [cart, setCart] = useState([]);
+  const [nombre,setNombre] = useState("Ailu");
 
-  const [userName,setUserName] = useState()
-  const [producto,setProducto] = useState()
+  
+  const addItem = (item) => {
+    setCart([...cart, item]);
+  };
 
-  const guardarEnCarrito = (producto,cantidad) => {
-    console.log("guardando en carrito")
-    setProducto("nuevo producto")
-  }
- 
-
-  setUserName("Ailu")
+  const removeItem = (itemId) => {
+    setCart(cart.filter((item) => item.id !== itemId));
+  }; 
 
   const valorDelContexto = {
-    user: userName,
-    producto : producto,
-    carrito : [],
-    guardarEnCarrito : guardarEnCarrito
+    cart: cart,
+    addItem: addItem,
+    removeItem: removeItem,
+    nombre : nombre,
+    carrito : []
   }
-  return (
+ return (
     <Provider value={valorDelContexto}>
       {children}
     </Provider>
   )
 }
 
-export default CustomProvider
+export default CustomProvider;
