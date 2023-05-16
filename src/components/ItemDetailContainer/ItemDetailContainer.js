@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import mock from "../../productos.json"
+import ItemDetail from "./ItemDetail";
+import mock from "../../productos.json";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState();

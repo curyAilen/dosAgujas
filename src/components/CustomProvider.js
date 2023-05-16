@@ -1,31 +1,43 @@
 import { createContext, useState } from "react"
-export const contexto = createContext();
+
+export const contexto = createContext({
+  carrito: []
+});
 
 const { Provider } = contexto
 
+const CustomProvider = ({ children }) => {
+  const [carrito, setCarrito] = useState([]);
 
-const CustomProvider = ({children}) => {
-  const [cart, setCart] = useState([]);
-  const [nombre,setNombre] = useState("Ailu");
+  const inCarrito = (itemId) => {
+    return carrito.some((prod) => prod.id === itemId);
+  };
 
-  
-  const addItem = (item) => {
-    setCart([...cart, item]);
+  const addItem = (item, cantidad) => {
+    const newItem = { ...item, cantidad: cantidad };
+    if (!inCarrito(item.id)) {
+      setCarrito((prev) => [...prev, { ...item, cantidad }]);
+    } else {
+      setCarrito((prev) =>
+        prev.map((prod) =>
+          prod.id === item.id ? { ...prod, cantidad: prod.cantidad + cantidad } : prod
+        )
+      );
+    }
   };
 
   const removeItem = (itemId) => {
-    setCart(cart.filter((item) => item.id !== itemId));
-  }; 
+    const carritoUpdate = carrito.filter((prod) => prod.id === itemId);
+    setCarrito(carritoUpdate);
+  };
 
-  const valorDelContexto = {
-    cart: cart,
-    addItem: addItem,
-    removeItem: removeItem,
-    nombre : nombre,
-    carrito : []
-  }
+  const vaciarCarrito = () => {
+    setCarrito([]);
+  };
+
+
  return (
-    <Provider value={valorDelContexto}>
+    <Provider value={{carrito, addItem, inCarrito, removeItem, vaciarCarrito} }>
       {children}
     </Provider>
   )
