@@ -1,6 +1,6 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useContext } from "react";
-import CartProvider from "./components/CartProvider";
+import {CartProvider} from "../CartProvider";
 import ItemCount from "../CartWidget/ItemCount";
 
 const ItemDetail = ({ id, nombre, stock, precio, categoria, img }) => {
