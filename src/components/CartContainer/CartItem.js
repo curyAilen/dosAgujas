@@ -1,9 +1,9 @@
 import { Button, Card, Container } from "react-bootstrap";
 import { useContext } from "react";
-import {CartProvider} from "../CartProvider";
+import { useCart } from "../CartProvider";
 
 function CartItem() {
-  const { cart, addItem, vaciar, removerItem, } = useContext(CartProvider);
+  const { removeItem, decreaseQuantity, cart, addItem } = useCart();
   return (
     <Container>
         <h3>Mi cart</h3>
@@ -32,12 +32,12 @@ function CartItem() {
                 <h4 className="mx-2">{item.cantidad}</h4>
                 <Button
                   variant="secondary"
-                  onClick={() => removerItem(item.id)}
+                  onClick={() => decreaseQuantity(item.id)}
                 >
                   +
                 </Button>
 
-                <Button variant="danger" onClick={() => vaciar(item.id)}>
+                <Button variant="danger" onClick={() => removeItem(item.id)}>
                   Remover
                 </Button>
               </Card.Footer>

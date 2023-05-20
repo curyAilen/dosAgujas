@@ -1,52 +1,55 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
-export const CartOrder = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
-
   const [cart, setCart] = useState([]);
 
-
-  const addItem = (item, cantidad) => {
+  const addItem = (item, quantity) => {
     if (isInCart(item.id)) {
-      const newCart = [...cart];
-      for (const element of newCart) {
-        if (element.item.id === item.id) {
-          element.cantidad = element.cantidad + cantidad;
+      const updatedCart = cart.map((cartItem) => {
+        if (cartItem.item.id === item.id) {
+          return {
+            ...cartItem,
+            quantity: cartItem.quantity + quantity,
+          };
         }
-      }
-      setCart(newCart);
+        return cartItem;
+      });
+      setCart(updatedCart);
     } else {
-      setCart([...cart, { item: item, cantidad: cantidad }]);
+      setCart([...cart, { item, quantity }]);
     }
   };
 
-  const removerItem = (id) => {
-    const newCart = [...cart].filter((element) => element.item.id !== id);
-    setCart(newCart);
+  const removeItem = (itemId) => {
+    const updatedCart = cart.filter((cartItem) => cartItem.item.id !== itemId);
+    setCart(updatedCart);
   };
 
-  const vaciar = () => {
+  const decreaseQuantity = (itemId) => {
+    const updatedCart = cart.map((cartItem) => {
+      if (cartItem.item.id === itemId && cartItem.quantity > 1) {
+        return {
+          ...cartItem,
+          quantity: cartItem.quantity - 1,
+        };
+      }
+      return cartItem;
+    });
+    setCart(updatedCart);
+  };
+
+  const clearCart = () => {
     setCart([]);
   };
 
-  const isInCart = (id) => {
-    return cart.find((element) => element.item.id === id);
+  const isInCart = (itemId) => {
+    return cart.some((cartItem) => cartItem.item.id === itemId);
   };
 
-  const getQuantity = () => {
-    let quantity = 0;
-    cart.forEach((element) => (quantity += element.cantidad));
-    return quantity;
-  };
-
-  const getTotal = () => {
-    let total = 0;
-    cart.forEach((element) => {
-      total += element.cantidad * element.item.precio;
-    });
-    return total;
+  const getTotalQuantity = () => {
+    return cart.reduce((total, cartItem) => total + cartItem.quantity, 0);
   };
 
   return (
@@ -54,10 +57,11 @@ export const CartProvider = ({ children }) => {
       value={{
         cart,
         addItem,
-        vaciar,
-        removerItem,
-        getQuantity,
-        getTotal,
+        removeItem,
+        decreaseQuantity,
+        clearCart,
+        isInCart,
+        getTotalQuantity,
       }}
     >
       {children}
@@ -65,4 +69,4 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-export default CartProvider;
+export const useCart = () => useContext(CartContext);

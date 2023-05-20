@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import mock from "../../productos.json";
+import { useCart } from "../CartProvider";
 
 const ItemDetailContainer = () => {
+  const { addItem } = useCart();
     const [product, setProduct] = useState();
     const { id } = useParams();
   

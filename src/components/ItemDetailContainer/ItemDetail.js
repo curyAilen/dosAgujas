@@ -1,19 +1,19 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useContext } from "react";
-import {CartProvider} from "../CartProvider";
+import { useCart } from "../CartProvider";
 import ItemCount from "../CartWidget/ItemCount";
 
 const ItemDetail = ({ id, nombre, stock, precio, categoria, img }) => {
-  const { addItem, carrito } = useContext(CartProvider);
+  const { addItem, cart } = useCart();
 
   const handleAddToCart = (cantidad) => {
     const item = { id, nombre, stock, precio, categoria, img };
 
-    // Verificar si el item ya está agregado al carrito
-    const itemEnCarrito = carrito.find((item) => item.id === id);
+    // Verificar si el item ya está agregado al cart
+    const itemEncart = cart.find((item) => item.id === id);
 
-    if (itemEnCarrito) {
-      addItem(item, itemEnCarrito.cantidad + cantidad);
+    if (itemEncart) {
+      addItem(item, itemEncart.cantidad + cantidad);
     } else {
       addItem(item, cantidad);
     }
