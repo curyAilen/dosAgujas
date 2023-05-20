@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { contexto } from "../CustomProvider";
+
 
 function Perfil() {
   //  const { } = useContext(contexto);
