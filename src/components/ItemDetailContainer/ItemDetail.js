@@ -1,10 +1,10 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useContext } from "react";
-import { CartOrder } from "../CartProvider";
+import CartProvider from "./components/CartProvider";
 import ItemCount from "../CartWidget/ItemCount";
 
 const ItemDetail = ({ id, nombre, stock, precio, categoria, img }) => {
-  const { addItem, carrito } = useContext(CartOrder);
+  const { addItem, carrito } = useContext(CartProvider);
 
   const handleAddToCart = (cantidad) => {
     const item = { id, nombre, stock, precio, categoria, img };

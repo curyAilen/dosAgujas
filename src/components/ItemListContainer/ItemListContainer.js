@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import mock from "../../productos.json"
-import { CartOrder } from "../CartProvider";
+
 
 
 
