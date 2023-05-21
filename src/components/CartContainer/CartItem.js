@@ -1,41 +1,54 @@
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card, Container, Image } from "react-bootstrap";
 import { useCart } from "../CartProvider";
 
 function CartItem() {
-  const { removeItem, decreaseQuantity, cart, addItem } = useCart();
+  const { removeItem, decreaseQuantity, cart, addItem, getTotalQuantity } = useCart();
+
+  const getTotalPrice = () => {
+    return cart.reduce((total, cartItem) => {
+      return total + cartItem.item.precio * cartItem.quantity;
+    }, 0);
+  };
+
   return (
     <Container>
       <h3>Mi carrito</h3>
       <hr style={{ width: "50%" }} />
-      {cart.map((item) => (
+      {cart.map((cartItem) => (
         <div
           style={{ width: "18rem", margin: "5px " }}
           className="d-flex"
-          key={item.id} 
+          key={cartItem.item.id}
         >
           <div className="card-header">
-            <Card.Text>{item.categoria}</Card.Text>
+            <Image src={cartItem.item.img} style={{ height: "175px" }} />
+            <Card.Text>{cartItem.item.categoria}</Card.Text>
           </div>
           <Card.Body className="m-5">
-            <Card.Title>{item.nombre}</Card.Title>
-            <Card.Text>Precio: ${item.precio}</Card.Text>
+            <Card.Title>{cartItem.item.nombre}</Card.Title>
+            <Card.Text>Precio: ${cartItem.item.precio}</Card.Text>
           </Card.Body>
           <Card.Footer className="d-flex justify-content-end align-items-center">
-          <Button variant="danger" onClick={() => removeItem(item.id)}>
-            Remover
-          </Button>
-          <Button variant="secondary" onClick={() => decreaseQuantity(item.id)}>
-            -
-          </Button>
-          <Button variant="secondary" onClick={() => addItem(item.id)}>
-            +
-          </Button>
+          
+            <Button variant="secondary" onClick={() => decreaseQuantity(cartItem.item.id)}>
+              -
+            </Button>
+            <h5>{cartItem.quantity}</h5>
+            <Button variant="secondary" onClick={() => addItem(cartItem.item, 1)}>
+              +
+            </Button>
+            <Button variant="danger" onClick={() => removeItem(cartItem.item.id)}>
+              Remover
+            </Button>
           </Card.Footer>
         </div>
       ))}
+      <div>
+        <h5>Total de productos: {getTotalQuantity()}</h5>
+        <h5>Total a pagar: ${getTotalPrice()}</h5>
+      </div>
     </Container>
   );
 }
-
 
 export default CartItem;
