@@ -1,5 +1,4 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { useContext } from "react";
 import { useCart } from "../CartProvider";
 import ItemCount from "../CartWidget/ItemCount";
 
@@ -9,7 +8,6 @@ const ItemDetail = ({ id, nombre, stock, precio, categoria, img }) => {
   const handleAddToCart = (cantidad) => {
     const item = { id, nombre, stock, precio, categoria, img };
 
-    // Verificar si el item ya está agregado al cart
     const itemEncart = cart.find((item) => item.id === id);
 
     if (itemEncart) {

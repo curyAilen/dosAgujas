@@ -7,15 +7,12 @@ const ItemCount = ({ onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
 
   useEffect(() => {
-    console.log("cambios");
   }, [quantity]);
 
   const incrementa = () => {
-    console.log("incremeta");
     setQuantity(quantity + 1);
   };
   const decrementa = () => {
-    console.log("decrementa");
     if (quantity > 1) setQuantity(quantity - 1);
   };
 

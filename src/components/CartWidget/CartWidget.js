@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useCart } from "../CartProvider";
 import { Link } from "react-router-dom";
 
