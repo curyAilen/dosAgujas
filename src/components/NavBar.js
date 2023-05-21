@@ -1,12 +1,7 @@
-
 import CartWidget from "./CartWidget/CartWidget"
 import { Link } from "react-router-dom";
-
-
 const Header = () => {  
- 
-
-  return (
+    return (
     <header className="header">
    
       <nav className="navbar navbar-expand-lg navbar-light bg-light">

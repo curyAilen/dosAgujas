@@ -30,11 +30,11 @@ function CartItem() {
           </Card.Body>
           <Card.Footer className="d-flex justify-content-end align-items-center">
           
-            <Button variant="secondary" onClick={() => decreaseQuantity(cartItem.item.id)}>
+            <Button  onClick={() => decreaseQuantity(cartItem.item.id)} className="btn boton mx-2">
               -
             </Button>
             <h5>{cartItem.quantity}</h5>
-            <Button variant="secondary" onClick={() => addItem(cartItem.item, 1)}>
+            <Button onClick={() => addItem(cartItem.item, 1)} className="btn boton mx-2">
               +
             </Button>
             <Button variant="danger" onClick={() => removeItem(cartItem.item.id)}>

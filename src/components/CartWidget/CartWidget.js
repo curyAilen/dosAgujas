@@ -7,8 +7,8 @@ const CartWidget = () => {
 
   return (
     <section>
-      <Link to="/Cart" className="productos d-flex align-items-center text-reset me-3">
-        <img src="/images/carrito.png" height="30" alt="Carrito compras" loading="lazy" className=" " />
+      <Link to="/Cart" className="productos d-flex align-items-center text-reset me-3" style={{ textDecoration: 'none' }}>
+        <img src="/images/carrito.png" height="30" alt="Carrito compras" loading="lazy" />
         <p>{getTotalQuantity() }</p>
       </Link>
     </section>

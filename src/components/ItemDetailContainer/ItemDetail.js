@@ -21,7 +21,7 @@ const ItemDetail = ({ id, nombre, stock, precio, categoria, img }) => {
     <Container className="mt-5">
       <Row>
         <Col xs={12} lg={6}>
-          <Image src={img} alt={nombre} thumbnail />
+          <Image src={img} alt={nombre}  />
         </Col>
         <Col xs={12} lg={6}>
           <h4 className="fs-4">{nombre}</h4>

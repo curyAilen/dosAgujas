@@ -16,9 +16,7 @@ const ItemDetailContainer = () => {
         if (docSnap.exists()) {
           const data = docSnap.data();
           setProduct({ id, ...data });
-        } else {
-          console.log("No such document!");
-        }
+        } 
       } catch (error) {
         console.log(error);
       }
@@ -29,7 +27,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      {product ? <ItemDetail {...product} /> : <p>Loading...</p>}
+      {<ItemDetail {...product} />}
     </div>
   );
 };

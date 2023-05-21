@@ -8,7 +8,7 @@ const ItemCount = ({ onAdd }) => {
 
   useEffect(() => {
   }, [quantity]);
-
+ 
   const incrementa = () => {
     setQuantity(quantity + 1);
   };
