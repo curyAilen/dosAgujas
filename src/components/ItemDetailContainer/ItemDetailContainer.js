@@ -1,33 +1,37 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import mock from "../../productos.json";
-import { useCart } from "../CartProvider";
+import { db } from "../../firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState();
-    const { id } = useParams();
-  
-    useEffect(() => {  
-      function getProducts() {
-        return new Promise((res) => {
-          setTimeout(() => {
-            res(mock);
-          }, 1000);
-        });
+  const [product, setProduct] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const docRef = doc(db, "productos", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setProduct({ id, ...data });
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.log(error);
       }
-  
-      getProducts(id)
-        .then((product) => {
-          setProduct(product.find((x) => x.id ===  parseInt(id)));
-        })
-    }, [id]);
-  
-    return(
+    };
+
+    getProduct();
+  }, [id]);
+
+  return (
     <div>
-    <ItemDetail {...product} />
+      {product ? <ItemDetail {...product} /> : <p>Loading...</p>}
     </div>
-    )
-   
+  );
 };
+
 export default ItemDetailContainer;

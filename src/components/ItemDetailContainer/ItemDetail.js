@@ -30,11 +30,7 @@ const ItemDetail = ({ id, nombre, stock, precio, categoria, img }) => {
           </h5>
 
           <div className="d-flex justify-content-center mt-4">
-            <ItemCount
-              inicial={1}
-              stock={stock}
-              onAdd={handleAddToCart}
-            />
+            <ItemCount inicial={1} stock={stock} onAdd={handleAddToCart} />
           </div>
         </Col>
       </Row>
@@ -43,4 +39,3 @@ const ItemDetail = ({ id, nombre, stock, precio, categoria, img }) => {
 };
 
 export default ItemDetail;
-
