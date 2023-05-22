@@ -1,7 +1,8 @@
-import { Button, Card, Container, Image } from "react-bootstrap";
-import { useCart } from "../CartProvider";
+import React from 'react';
+import { Button, Card, Container, Image } from 'react-bootstrap';
+import { useCart } from '../CartProvider';
 
-function CartItem() {
+const CartItem = () => {
   const { removeItem, decreaseQuantity, cart, addItem, getTotalQuantity } = useCart();
 
   const getTotalPrice = () => {
@@ -29,8 +30,7 @@ function CartItem() {
             <Card.Text>Precio: ${cartItem.item.precio}</Card.Text>
           </Card.Body>
           <Card.Footer className="d-flex justify-content-end align-items-center">
-          
-            <Button  onClick={() => decreaseQuantity(cartItem.item.id)} className="btn boton mx-2">
+            <Button onClick={() => decreaseQuantity(cartItem.item.id)} className="btn boton mx-2">
               -
             </Button>
             <h5>{cartItem.quantity}</h5>
@@ -45,10 +45,10 @@ function CartItem() {
       ))}
       <div>
         <h5>Total de productos: {getTotalQuantity()}</h5>
-        <h5>Total a pagar: ${getTotalPrice()}</h5>
+        <h5>Total a pagar: ${isNaN(getTotalPrice()) ? 0 : getTotalPrice()}</h5>
       </div>
     </Container>
   );
-}
+};
 
 export default CartItem;

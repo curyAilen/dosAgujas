@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { collection, getDocs, getDoc, doc, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
-import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 
-function ServicioFirebase() {
+const ServicioFirebase = () => {
   const [producto, setProducto] = useState({});
   const [productos, setProductos] = useState([]);
 
@@ -27,14 +27,26 @@ function ServicioFirebase() {
       console.log(error);
     }
   };
+  
+  const addOrder = async (item) => {
+    try {
+      const ordersCollection = collection(db, "order");
+      await addDoc(ordersCollection, item);
+    } catch (error) {
+      console.log("Error al agregar el nuevo item a Firebase:", error);
+    }
+  };
 
+  useEffect(() => {
+    fetchCollection();
+  }, []);
 
   return {
     producto,
     productos,
-    fetchCollection,
+    addOrder,
     fetchItemProducto
   };
-}
+};
 
 export default ServicioFirebase;
