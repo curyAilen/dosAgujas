@@ -7,7 +7,7 @@ const ServicioFirebase = () => {
   const [productos, setProductos] = useState([]);
 
   const fetchCollection = async () => {
-    try {
+    try { 
       const data = collection(db, "items");
       const col = await getDocs(data);
       const response = col.docs.map(doc => ({ id: doc.id, ...doc.data() }));

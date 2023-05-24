@@ -7,7 +7,7 @@
         "categoria": "Gorros",
         "img": "/images/products/gorro1.jpg"
     },
-    {
+    { 
         "id": 2,
         "nombre": "Manta",
         "stock": 6,

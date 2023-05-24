@@ -3,7 +3,7 @@
 Dos agujas es una tienda online especializada en la venta de productos de lana de primera línea, todos confeccionados de forma artesanal, sin procesos industriales.
 
 ## Tecnologías y Librerías usadas
-
+ 
 - React.js: Utilizado para el desarrollo del frontend.
 - Firebase: Utilizado para la gestión de la base de datos y autenticación.
 - React Router: Utilizado para el enrutamiento de la aplicación.
@@ -11,7 +11,7 @@ Dos agujas es una tienda online especializada en la venta de productos de lana d
 - nodemon: Utilizado para la actualización, sin necesidad de reiniciar el proyecto.
 
 ## Instalación y Ejecución
-
+ 
 1. Clona este repositorio en tu máquina local:
  - git clone https://github.com/curyAilen/dosAgujas.git
 2. Accede al directorio del proyecto:
