@@ -23,4 +23,4 @@ Dos agujas es una tienda online especializada en la venta de productos de lana d
 5. En caso de que no se abra automaticamente el proyecto puede ir a su navegador web e ingresar la siguiente URL `http://localhost:3000`.
 ## Video de Presentación
 
-[Video presentación de Dos Agujas Tienda Online](https://youtu.be/Mm8OPzQ8tnQ)
+[Video presentación de Dos Agujas Tienda Online](https://youtu.be/-J31BmA6iZs)
